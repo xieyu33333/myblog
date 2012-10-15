@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Place1</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+  	 <div class="container">	
+  	 	<div class="nav-collapse">
+           <a class="brand" href="/firstpages/page">庇护的Blog</a> 
+               <ul class="nav">
+                 <li class="active"><a href="/firstpages/page">首页</a></li>
+                 <li><a href="/firstpages/new">编辑</a></li>
+                 <li><a href="/firstpages">管理</a></li>
+               </ul>
+           </div>    
+         <form class="navbar-form pull-left">
+          <input type="text" class="search-query span2">
+         </form>
+    </div> 
+  </div>   
+</div> 
+<!--	<header class="header">
+		<div class="logo">
+			<a href="/firstpages/page">庇护的BLOG</a>
+		</div>
+		<nav class="header_nav">
+			<ul class="header_ul">
+				<li>
+					<a href="/firstpages/page">首页</a>
+				</li>
+				<li>
+					<a href="/firstpages/new">编辑</a>
+				</li>
+				<li>
+					<a href="/firstpages">管理</a>
+				</li>
+			</ul>
+		</nav>
+		<form class="search" action="/">
+			<input id="searchKey" type="text" name="key" placeholder="Search" maxlength="20">
+			<input id="search" type="submit"  name="search" value="">
+		</form>
+		<ul>	
+          <% if session[:user_id] %>
+            <li><%= link_to 'Users', users_path %></li>
+            <%= button_to 'Logout', logout_path, method: :delete %>  
+          <% else %>
+            <div id="user">登陆</div>
+          <% end %>
+        </ul>
+	</header>
+-->
+
+<%= yield %>
+
+</body>
+</html>

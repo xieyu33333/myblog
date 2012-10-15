@@ -1,0 +1,39 @@
+<%= form_for(@firstpage) do |f| %>
+  <% if @firstpage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@firstpage.errors.count, "error") %> prohibited this firstpage from being saved:</h2>
+
+      <ul>
+      <% @firstpage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :类别 %><br />
+    <%= f.text_field :pid %>
+  </div>
+  <div class="field">
+    <%= f.label :标题 %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :作者 %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :日期 %><br />
+    <%= f.text_field :date %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :正文 %><br />
+    <%= f.kindeditor :content %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

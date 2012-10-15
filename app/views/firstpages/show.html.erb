@@ -1,0 +1,39 @@
+
+	
+<div class="container">	
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @firstpage.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @firstpage.date %>
+</p>
+
+<p>
+  <b>Pid:</b>
+  <%= @firstpage.pid %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @firstpage.content %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @firstpage.user %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @firstpage.author %>
+</p>
+
+
+<%= link_to 'Edit', edit_firstpage_path(@firstpage) %> |
+<%= link_to 'Back', firstpages_path %>
+</div>

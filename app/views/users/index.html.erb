@@ -1,0 +1,27 @@
+<h1>Listing users</h1>
+<% if notice %>
+<p id="notice"><%= notice%></p>
+<%end%>
+<div class="container">
+<table>
+  <tr>
+    <th width='70%'>User</th>
+    <th width='10%'></th>
+    <th width='10%'></th>
+    <th width='10%'></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>
+</div>
