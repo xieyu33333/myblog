@@ -18,6 +18,17 @@
                  <li><a href="/firstpages/new">编辑</a></li>
                  <li><a href="/firstpages">管理</a></li>
                </ul>
+               <ul class="nav pull-right">
+               	<% if session[:user_id] %>
+                   <li><%= link_to '用户', users_path %></li>
+                   <li><%= link_to ' 登出', logout_path, method: :delete %> </li> 
+                  <% else %>
+                   <li id="user"><a href="/login">登陆</a></li>
+                  <% end %>
+               </ul>	
+               
+         
+        
            </div>    
          <form class="navbar-form pull-left">
           <input type="text" class="search-query span2">

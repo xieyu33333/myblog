@@ -10,7 +10,7 @@ class SessionController < ApplicationController
     user=User.find_by_name(params[:name])
     if user and user.authenticate(params[:password])
       session[:user_id]=user.id
-      redirect_to admin_url
+      redirect_to "/firstpages/page"
     else
       redirect_to login_url, alert:"wrong password or username"    
     end
